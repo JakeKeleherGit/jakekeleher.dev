@@ -48,7 +48,7 @@
       <ul class="project-list">
         <li class="project-card">
           <div class="project-media">
-            <img src="assets/images/project-turbovets.png" alt="Turbovets — task management for veterans, by veterans" width="800" height="450" />
+            <img class="project-img" src="assets/images/project-turbovets.png" alt="Turbovets — task management for veterans, by veterans" width="800" height="450" />
           </div>
           <div class="project-body">
             <h3 class="project-title">Full-Stack Task Management System</h3>
@@ -63,7 +63,7 @@
 
         <li class="project-card">
           <div class="project-media">
-            <img src="assets/images/project-emilynava.png" alt="Emily Nava Design website — illustration, branding, and design" width="800" height="450" />
+            <img class="project-img" src="assets/images/project-emilynava.png" alt="Emily Nava Design website — illustration, branding, and design" width="800" height="450" />
           </div>
           <div class="project-body">
             <h3 class="project-title">emilynavadesign.com</h3>
@@ -81,7 +81,7 @@
 
         <li class="project-card">
           <div class="project-media">
-            <img src="https://placehold.co/800x450/e5e7eb/6b7280?text=Figma+Project" alt="Figma design project" width="800" height="450" />
+            <img class="project-img" src="https://placehold.co/800x450/e5e7eb/6b7280?text=Figma+Project" alt="Figma design project" width="800" height="450" />
           </div>
           <div class="project-body">
             <h3 class="project-title">[Figma project name]</h3>
@@ -110,6 +110,13 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> Jake Keleher. Built for JakeKeleher.dev.</p>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" aria-label="Enlarged project image">
+    <button type="button" class="lightbox__close" aria-label="Close">×</button>
+    <div class="lightbox__content">
+      <img src="" alt="" class="lightbox__img" />
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

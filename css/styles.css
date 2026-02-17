@@ -59,6 +59,73 @@ a:hover { text-decoration: underline; }
   transition: width 0.1s ease-out;
 }
 
+/* --- Lightbox --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox__close {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: color 0.2s, background 0.2s;
+  z-index: 2001;
+}
+
+.lightbox__close:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
 /* --- Header --- */
 .site-header {
   display: flex;
@@ -197,6 +264,9 @@ a:hover { text-decoration: underline; }
   height: 100%;
   object-fit: cover;
 }
+.project-media .project-img {
+  cursor: pointer;
+}
 
 /* Fallback when image is missing */
 .project-media:has(img[src*="project-"]) {
@@ -279,6 +349,9 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.project-detail__media .project-img {
+  cursor: pointer;
 }
 
 .project-detail__body { min-width: 0; }
