@@ -14,14 +14,16 @@ Portfolio site for Jake Keleher — Computer Science & Graphic Design. Built wit
 ## File structure
 
 ```
-JakeKeleher.dev/
-├── index.html          # Single-page site (hero, about, projects, contact)
+jakekeleher.dev/
+├── index.html          # Home (hero, about, project cards, contact section)
+├── project.html        # Project detail page (Turbovets, Emily Nava, Figma)
+├── contact.html        # Contact page (links + message form)
 ├── css/
-│   └── styles.css      # All styles
+│   └── styles.css      # All styles (layout, components, responsive)
 ├── js/
-│   └── main.js         # Footer year, optional enhancements
+│   └── main.js         # Footer year, scroll progress bar, other scripts
 ├── assets/
-│   ├── images/         # Project thumbnails, headshot, etc.
+│   ├── images/         # Project images (e.g. project-turbovets.png, project-emilynava.png)
 │   │   └── .gitkeep
 │   └── projects/       # Optional: per-project assets (mockups, process, final files)
 │       └── .gitkeep
@@ -36,7 +38,7 @@ Keep your three projects organized so you can drop them in later:
 2. **emilynavadesign.com** — Screenshots, link, your role (design/dev), process if you have it.  
 3. **Figma project** — Export key frames or share a Figma link; add a short write-up of concept and process.
 
-You can store source assets in `assets/images/` (e.g. `project-taskmanager.png`, `project-emilynava.png`, `project-figma.png`) and swap the placeholder image URLs in `index.html` for these local paths when ready.
+Project images live in `assets/images/` (e.g. `project-turbovets.png`, `project-emilynava.png`). Use the same paths in both `index.html` (project cards) and `project.html` (detail sections). Add `project-figma.png` when ready and replace the placeholder in `project.html`.
 
 ## Deploying to GitHub Pages
 
@@ -62,6 +64,8 @@ Then visit `http://localhost:8000` (or the port shown).
 
 ## What to customize
 
-- **index.html:** Replace `[bracketed]` placeholders: about text, project descriptions, Figma project name, email, GitHub, LinkedIn.  
-- **Project images:** Add your own to `assets/images/` and update the `src` in `index.html` (remove placehold.co URLs).  
-- **Project links:** Set real URLs for the task manager and Figma project; emilynavadesign.com is already linked.
+- **index.html:** Replace `[bracketed]` placeholders: about text, project descriptions, Figma project name.  
+- **project.html:** Fill in Turbovets stack/learnings, Figma project name and description; set real “View project” link for Turbovets if you have one.  
+- **contact.html:** Replace placeholder email and LinkedIn URL; hook the form up to Formspree, Netlify Forms, or your own backend when ready.  
+- **Project images:** Add your own to `assets/images/` and update `src` in `index.html` and `project.html` (replace placehold.co for the Figma project).  
+- **Project links:** Set real URLs for the task manager and Figma project; emilynavadesign.com is already linked on the project page.
