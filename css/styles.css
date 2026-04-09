@@ -232,6 +232,32 @@ a:hover { text-decoration: underline; }
 .about-content p { margin: 0 0 var(--space-md); }
 .about-content p:last-child { margin-bottom: 0; }
 
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Text takes ~70% */
+.about-text {
+  flex: 0 0 55%;
+}
+
+/* Image takes ~35% */
+.about-image {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-image img {
+  width: 200%;
+  max-width: 420px; /* keeps it from getting too huge */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* --- Projects --- */
 .project-list {
   list-style: none;
@@ -384,6 +410,51 @@ a:hover { text-decoration: underline; }
 .project-detail__content p { margin: 0 0 var(--space-md); }
 .project-detail__content p:last-child { margin-bottom: 0; }
 
+/* --- Experience page --- */
+.experience-entry {
+  padding: 0 var(--space-xl) var(--space-3xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.experience-entry__inner {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.experience-entry:last-of-type .experience-entry__inner { border-bottom: none; }
+
+.experience-entry__header {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-entry__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  margin: 0 0 var(--space-xs);
+}
+
+.experience-entry__role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-xs);
+}
+
+.experience-entry__dates {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.experience-entry__content {
+  color: var(--color-text);
+}
+
+.experience-entry__content p { margin: 0 0 var(--space-md); }
+.experience-entry__content p:last-child { margin-bottom: 0; }
+
 /* --- Contact --- */
 .contact-text {
   color: var(--color-text-muted);
@@ -470,6 +541,7 @@ a:hover { text-decoration: underline; }
   .section { padding: var(--space-2xl) var(--space-lg); }
 
   .project-detail { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .experience-entry { padding-left: var(--space-lg); padding-right: var(--space-lg); }
   .project-detail__inner {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
