@@ -37,7 +37,7 @@
           <div class="contact-links-block">
             <h2 class="contact-heading">Find me</h2>
             <ul class="contact-links">
-              <li><a href="mailto:your.email@example.com">Email</a></li>
+              <li><a href="mailto:jakepk7@gmail.com">Email</a></li>
               <li><a href="https://github.com/JakeKeleherGit" target="_blank" rel="noopener noreferrer">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/jake-keleher-88a0b2271/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
@@ -46,16 +46,30 @@
 
         <div class="contact-form-block">
           <h2 class="contact-heading">Send a message</h2>
-          <form class="contact-form" action="#" method="post" aria-label="Contact form">
+        
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://formspree.io/f/xpqkjlzq"
+            method="POST"
+            aria-label="Contact form"
+          >
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" required autocomplete="name" />
+        
             <label for="contact-email">Email</label>
             <input type="email" id="contact-email" name="email" required autocomplete="email" />
+        
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="message" rows="5" required></textarea>
+        
+            <input type="hidden" name="_subject" value="New portfolio contact form message" />
+            <input type="hidden" name="_replyto" value="" />
+        
             <button type="submit" class="btn btn-primary">Send message</button>
           </form>
-          <p class="contact-form-note"></p>
+        
+          <p class="contact-form-note" id="form-status"></p>
         </div>
       </div>
     </section>
@@ -65,6 +79,40 @@
     <p>© <span id="year"></span> Jake Keleher.</p>
   </footer>
 
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const emailInput = document.getElementById("contact-email");
+  
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+  
+      status.textContent = "Sending...";
+      form.querySelector('input[name="_replyto"]').value = emailInput.value;
+  
+      const data = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+  
+        if (response.ok) {
+          status.textContent = "Thanks — your message was sent.";
+          form.reset();
+        } else {
+          status.textContent = "Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        status.textContent = "Something went wrong. Please try again.";
+      }
+    });
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
