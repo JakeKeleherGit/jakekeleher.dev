@@ -294,6 +294,13 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
 }
 
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 5%;
+}
+
 /* Fallback when image is missing */
 .project-media:has(img[src*="project-"]) {
   background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
